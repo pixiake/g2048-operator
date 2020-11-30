@@ -26,4 +26,4 @@ EOF
 
 > `serviceType` defineds the type of service, can be "NodePort", "ClusterIP", "LoadBalancer".
 
-> `size` is the size of the g2048 deployment.
+> `size` is the replicas of the g2048 deployment.
