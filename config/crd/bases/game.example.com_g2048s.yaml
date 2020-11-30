@@ -1,0 +1,68 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.3.0
+  creationTimestamp: null
+  name: g2048s.game.example.com
+spec:
+  group: game.example.com
+  names:
+    kind: G2048
+    listKind: G2048List
+    plural: g2048s
+    singular: g2048
+  scope: Namespaced
+  subresources:
+    status: {}
+  validation:
+    openAPIV3Schema:
+      description: G2048 is the Schema for the g2048s API
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          description: G2048Spec defines the desired state of G2048
+          properties:
+            serviceType:
+              type: string
+            size:
+              description: Size is the size of the g2048 deployment
+              format: int32
+              type: integer
+          type: object
+        status:
+          description: G2048Status defines the observed state of G2048
+          properties:
+            nodes:
+              description: Nodes are the names of the 2048 pods
+              items:
+                type: string
+              type: array
+          required:
+          - nodes
+          type: object
+      type: object
+  version: v1alpha1
+  versions:
+  - name: v1alpha1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

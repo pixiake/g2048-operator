@@ -1,0 +1,7 @@
+apiVersion: game.example.com/v1alpha1
+kind: G2048
+metadata:
+  name: g2048-sample
+spec:
+  size: 5
+  serviceType: NodePort

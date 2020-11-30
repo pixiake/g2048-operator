@@ -1,0 +1,12 @@
+domain: example.com
+layout: go.kubebuilder.io/v2
+multigroup: true
+projectName: g2048-operator
+repo: github.com/pixiake/g2048-operator
+resources:
+- group: game
+  kind: G2048
+  version: v1alpha1
+version: 3-alpha
+plugins:
+  go.sdk.operatorframework.io/v2-alpha: {}
