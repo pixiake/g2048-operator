@@ -10,7 +10,7 @@ The G2048 Operator provides native deployment and management of
 ```
 kubectl apply -f https://raw.githubusercontent.com/pixiake/g2048-operator/master/manifests/2048-operator.yaml
 ```
-* create 2046 custome source
+* create 2048 custome source
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: game.example.com/v1alpha1
